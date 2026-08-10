@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niles Painting</title>
     <link rel="icon" type="image/x-icon" href="/images/icon.webp">
+    <style>
+        @font-face {
+            font-family: 'Fvriosa';
+            src: url('/fonts/Fvriosa.ttf') format('truetype');
+        }
+    </style>
 </head>
 <body style="margin: 0; padding: 0;">
-<img src="/images/logo.jpg" alt="logo" style="width: 200px; margin-right: auto; margin-left: auto; display: block;">
-<h2 style="text-align: center">SERVING GREATER PORTLAND, THE CASCO BAY ISLANDS & MORE.</h2>
-<img src="/images/Brothers.webp" alt="Niles Brothers" style="width: 800px; margin-right: auto; margin-left: auto; display: block;">
-<button>Request A Free Quote Today</button>
+<div style="position: relative; overflow: hidden;">
+    <img src="/images/borthersPainted.jpg" alt="Niles Brothers" style="width: 100%; display: block; margin-top: -200px;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+        <img src="/images/logoT.webp" alt="logo" style="width: 200px; margin-top: 0;">
+        <h2 style="text-align: center; margin: 0; font-family: 'Fvriosa', sans-serif; color: #E97824;">SERVING GREATER PORTLAND, THE CASCO BAY ISLANDS & MORE.</h2>
+        <button style="margin-top: 500px; background-color: #E6E760; padding: 20px 30px; border: none; cursor: pointer; font-weight: bold; border-radius: 8px; box-shadow: 0 8px 15px rgba(0,0,0,0.3); font-size: 1.2rem;">Request A Free Quote Today</button>
+    </div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px; font-family: sans-serif;">
+    <h2 style="margin-bottom: 20px;">Contact Us</h2>
+    <div style="width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px;">
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+            <label for="message" style="font-weight: bold;">Message:</label>
+            <textarea id="message" name="message" rows="4" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+            <label for="email" style="font-weight: bold;">Email:</label>
+            <input type="email" id="email" name="email" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+        </div>
+        
+        <button style="background-color: #333; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px;">Send Message</button>
+    </div>
+</div>
 </body>
 </html>
