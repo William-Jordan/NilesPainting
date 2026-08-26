@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niles Painting</title>
-    <link rel="icon" type="image/x-icon" href="/images/icon.webp">
+    <link rel="icon" type="image/x-icon" href="images/icon.webp">
     <style>
         @font-face {
             font-family: 'Fvriosa';
-            src: url('/fonts/Fvriosa.ttf') format('truetype');
+            src: url('fonts/Fvriosa.ttf') format('truetype');
         }
         body {
             font-family: sans-serif;
@@ -41,7 +41,7 @@
             color: #333;
         }
         .orange-swatch-bg {
-            background-image: url('/images/OrangeSwatch.jpg');
+            background-image: url('images/OrangeSwatch.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
@@ -51,7 +51,7 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         .blue-swatch-bg {
-            background-image: url('/images/BlueSwatch.jpg');
+            background-image: url('images/BlueSwatch.jpg');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
@@ -121,6 +121,46 @@
             pointer-events: none;
         }
 
+        .link-cards-section {
+            display: flex;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .link-card {
+            flex: 1;
+            height: 300px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .link-card:hover {
+            transform: scale(1.02);
+        }
+        .link-card span {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Fvriosa', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .gallery-card {
+            background-image: url('images/BlueAndWhiteHouse.jpg');
+        }
+        .reviews-card {
+            background-image: url('images/Cat.jpg');
+            background-position: top;
+        }
+
         @media (max-width: 1200px) {
             .hero-bg {
                 margin-top: 0;
@@ -146,11 +186,17 @@
 
         @media (max-width: 768px) {
             .tile, .tile:nth-child(even) {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 gap: 20px;
             }
             .tile-text {
                 text-align: center;
+            }
+            .link-cards-section {
+                flex-direction: column;
+            }
+            .link-card {
+                height: 200px;
             }
             .hero-bg {
                 height: 500px;
@@ -174,9 +220,9 @@
 </head>
 <body style="margin: 0; padding: 0;">
 <div class="hero-container">
-    <img src="/images/borthersPainted.jpg" alt="Niles Brothers" class="hero-bg">
+    <img src="images/borthersPainted.jpg" alt="Niles Brothers" class="hero-bg">
     <div class="hero-content">
-        <img src="/images/logoT.webp" alt="logo" class="hero-logo">
+        <img src="images/logoT.webp" alt="logo" class="hero-logo">
         <h2 class="hero-title">SERVING GREATER PORTLAND, THE CASCO BAY ISLANDS & MORE.</h2>
         <button class="hero-cta">Request A Free Quote Today</button>
     </div>
@@ -184,7 +230,7 @@
 </div>
 <div class="tile-section">
     <div class="tile">
-        <img src="/images/LiamOnTheLadder.jpeg" alt="Liam on the ladder" class="tile-image">
+        <img src="images/LiamOnTheLadder.jpeg" alt="Liam on the ladder" class="tile-image">
         <div class="tile-text orange-swatch-bg">
             <p>
                 We are two brothers, born and raised in Portland,
@@ -193,7 +239,7 @@
         </div>
     </div>
     <div class="tile">
-        <img src="/images/House.webp" alt="Beautiful house" class="tile-image">
+        <img src="images/House.webp" alt="Beautiful house" class="tile-image">
         <div class="tile-text blue-swatch-bg">
             <p>
                 We paint to preserve a home's beauty and make a
@@ -202,7 +248,14 @@
         </div>
     </div>
 </div>
-<!--add  two buttons, one for gallery and one for coments -->
+<div class="link-cards-section">
+    <a href="gallery/" class="link-card gallery-card">
+        <span>Gallery</span>
+    </a>
+    <a href="reviews/" class="link-card reviews-card">
+        <span>Reviews</span>
+    </a>
+</div>
 <div style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px;">
     <h2 style="margin-bottom: 20px;">Contact Us</h2>
     <div style="width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px;">
