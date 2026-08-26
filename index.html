@@ -10,18 +10,200 @@
             font-family: 'Fvriosa';
             src: url('/fonts/Fvriosa.ttf') format('truetype');
         }
+        body {
+            font-family: sans-serif;
+        }
+        .tile-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .tile {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .tile:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .tile-image {
+            flex: 1;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .tile-text {
+            flex: 1;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        .orange-swatch-bg {
+            background-image: url('/images/OrangeSwatch.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 40px;
+            border-radius: 12px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .blue-swatch-bg {
+            background-image: url('/images/BlueSwatch.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 40px;
+            border-radius: 12px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        /* Hero Section Styles */
+        .hero-container {
+            position: relative;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        .hero-bg {
+            width: 100%;
+            display: block;
+            margin-top: -200px;
+        }
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+        .hero-logo {
+            width: 200px;
+            margin-top: 0;
+        }
+        .hero-title {
+            text-align: center;
+            margin: 0;
+            font-family: 'Fvriosa', sans-serif;
+            color: #E97824;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+        .hero-cta {
+            margin-top: auto;
+            margin-bottom: 180px;
+            background-color: #E6E760;
+            padding: 20px 30px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+        }
+        .hero-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to bottom, transparent, white);
+            pointer-events: none;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-bg {
+                margin-top: 0;
+                height: 550px;
+                object-fit: cover;
+                object-position: center 20%;
+            }
+            .hero-logo {
+                width: 160px;
+            }
+            .hero-title {
+                font-size: 1.3rem;
+            }
+            .hero-cta {
+                margin-bottom: 130px;
+                padding: 18px 28px;
+                font-size: 1.1rem;
+            }
+            .hero-fade {
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tile, .tile:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .tile-text {
+                text-align: center;
+            }
+            .hero-bg {
+                height: 500px;
+            }
+            .hero-logo {
+                width: 140px;
+            }
+            .hero-title {
+                font-size: 1.1rem;
+            }
+            .hero-cta {
+                margin-bottom: 100px;
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+            .hero-fade {
+                height: 80px;
+            }
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0;">
-<div style="position: relative; overflow: hidden;">
-    <img src="/images/borthersPainted.jpg" alt="Niles Brothers" style="width: 100%; display: block; margin-top: -200px;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
-        <img src="/images/logoT.webp" alt="logo" style="width: 200px; margin-top: 0;">
-        <h2 style="text-align: center; margin: 0; font-family: 'Fvriosa', sans-serif; color: #E97824;">SERVING GREATER PORTLAND, THE CASCO BAY ISLANDS & MORE.</h2>
-        <button style="margin-top: 500px; background-color: #E6E760; padding: 20px 30px; border: none; cursor: pointer; font-weight: bold; border-radius: 8px; box-shadow: 0 8px 15px rgba(0,0,0,0.3); font-size: 1.2rem;">Request A Free Quote Today</button>
+<div class="hero-container">
+    <img src="/images/borthersPainted.jpg" alt="Niles Brothers" class="hero-bg">
+    <div class="hero-content">
+        <img src="/images/logoT.webp" alt="logo" class="hero-logo">
+        <h2 class="hero-title">SERVING GREATER PORTLAND, THE CASCO BAY ISLANDS & MORE.</h2>
+        <button class="hero-cta">Request A Free Quote Today</button>
+    </div>
+    <div class="hero-fade"></div>
+</div>
+<div class="tile-section">
+    <div class="tile">
+        <img src="/images/LiamOnTheLadder.jpeg" alt="Liam on the ladder" class="tile-image">
+        <div class="tile-text orange-swatch-bg">
+            <p>
+                We are two brothers, born and raised in Portland,
+                ME, who started a painting company together.
+            </p>
+        </div>
+    </div>
+    <div class="tile">
+        <img src="/images/House.webp" alt="Beautiful house" class="tile-image">
+        <div class="tile-text blue-swatch-bg">
+            <p>
+                We paint to preserve a home's beauty and make a
+                space feel lighter.
+            </p>
+        </div>
     </div>
 </div>
-<div style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px; font-family: sans-serif;">
+<!--add  two buttons, one for gallery and one for coments -->
+<div style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px;">
     <h2 style="margin-bottom: 20px;">Contact Us</h2>
     <div style="width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px;">
         <div style="display: flex; flex-direction: column; gap: 5px;">
