@@ -1,0 +1,78 @@
+body{
+    margin:0;
+    background-color:#C2F5E2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.banner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 100px;
+    height: 200px;
+    position: relative;
+}
+.banner .left, .banner .right {
+    position: relative;
+    z-index: 2;
+}
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9ADCCC;
+    z-index: 0;
+}
+.banner img {
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+.banner img:hover {
+    transform: scale(1.1);
+}
+.small-logo {
+    width: 500px;
+}
+.free-estimate {
+    position: absolute;
+    top: 15vh;
+    right: 50px;
+    width: 500px;
+    overflow: hidden;
+    z-index: 3;
+}
+.sparkle {
+    position: absolute;
+    top: 0;
+    left: 25vw;
+    width: 800px;
+    z-index: 1;
+}
+.name-tags {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 50vh;
+}
+.main{
+    background-color:#C2F5E2;
+    flex: 1;
+}
+.footer{
+    background-color:#1B2846;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px 30px 100px;
+}
+.footer img {width: 20px}
+.footer p,h4, a {color:#fff; margin: 0}
+.links {margin-right: 10px; display: flex; flex-direction: row; gap: 20px;}
+.links a {display: flex; margin-bottom: 10px;}
+
+.nav {color: #fff;}
