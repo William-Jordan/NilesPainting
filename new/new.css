@@ -1,9 +1,22 @@
+/*@import url("https://typekit.net");*/
 body{
     margin:0;
     background-color:#C2F5E2;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: "din-2014", sans-serif;
+    position: relative;
+}
+.frame {
+    position: absolute;
+    pointer-events: none;
+    z-index: 4;
+    width: 98vw;
+    height: calc(100% - 2vh);
+    top: 1vh;
+    left: 1vw;
+    object-fit: fill;
 }
 .banner{
     display: flex;
@@ -41,8 +54,8 @@ body{
 .free-estimate {
     position: absolute;
     top: 15vh;
-    right: 50px;
-    width: 500px;
+    right: 3vw;
+    width: 27vw;
     overflow: hidden;
     z-index: 3;
 }
@@ -50,7 +63,7 @@ body{
     position: absolute;
     top: 0;
     left: 25vw;
-    width: 800px;
+    width: 42vw;
     z-index: 1;
 }
 .name-tags {
@@ -71,8 +84,10 @@ body{
     padding: 10px 100px 30px 100px;
 }
 .footer img {width: 20px}
-.footer p,h4, a {color:#fff; margin: 0}
+.footer p,h4, a {color:#fff; margin: 0; text-decoration: none;}
 .links {margin-right: 10px; display: flex; flex-direction: row; gap: 20px;}
 .links a {display: flex; margin-bottom: 10px;}
+.links img {width: 30px; margin-right: 10px;}
+.links p {margin-top: 5px}
 
 .nav {color: #fff;}
