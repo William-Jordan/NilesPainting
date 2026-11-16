@@ -41,16 +41,20 @@ body{
     background-color: #9ADCCC;
     z-index: 0;
 }
-.banner img {
+.banner .right img {
     width: 150px;
     transition: transform 0.3s ease;
 }
-.banner img:hover {
+.banner .right img:hover {
     transform: scale(1.1);
 }
-.small-logo {
-    width: 500px;
+#logo {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 30px;
+    /*background-color: red;*/
 }
+
 .free-estimate {
     position: absolute;
     top: 15vh;
@@ -67,8 +71,8 @@ body{
     z-index: 1;
 }
 .name-tags {
-    width: 70%;
-    margin-left: 15%;
+    width: 60%;
+    margin-left: 20%;
     margin-top: 50vh;
 }
 .main{
@@ -86,7 +90,7 @@ body{
 .footer img {width: 20px}
 .footer p,h4, a {color:#fff; margin: 0; text-decoration: none;}
 .links {margin-right: 10px; display: flex; flex-direction: row; gap: 20px;}
-.links a {display: flex; margin-bottom: 10px;}
+.links a {display: flex; margin-top: 10px;}
 .links img {width: 30px; margin-right: 10px;}
 .links p {margin-top: 5px}
 
