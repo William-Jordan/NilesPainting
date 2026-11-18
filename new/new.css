@@ -68,8 +68,8 @@ body{
 .sparkle {
     position: absolute;
     top: 0;
-    left: 25vw;
-    width: 42vw;
+    left: 29vw;
+    width: 38vw;
     z-index: 1;
 }
 .name-tags {
