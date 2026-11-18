@@ -7,7 +7,7 @@
 </head>
 <body>
 <img src="./images/frame.png" alt="frame" class="frame">
-<img src="./images/free-estimate.png" alt="free estimate" class="free-estimate">
+<img src="./images/free-estimate.png" alt="free estimate" class="free-estimate" id="free-estimate">
 <img src="logo/sparkle.png" alt="logo" class="sparkle">
 <div class="banner">
     <div class="left">
@@ -18,9 +18,53 @@
         <a href="#"><img src="./icons/about-white.png" alt="about Icon"></a>
         <a href="#"><img src="./icons/projects-white.png" alt="projects Icon"></a>
         <a href="#"><img src="./icons/reviews-white.png" alt="reviews Icon"></a>
-        <a href="#"><img src="./icons/contact-white.png" alt="contact Icon"></a>
+        <a href="#" id="contact-link"><img src="./icons/contact-white.png" alt="contact Icon"></a>
     </div>
 </div>
+<script>
+    function positionFreeEstimate() {
+        const freeEstimate = document.getElementById('free-estimate');
+        const contactLink = document.getElementById('contact-link');
+
+        if (freeEstimate && contactLink) {
+            const contactRect = contactLink.getBoundingClientRect();
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Calculate center of contact link relative to document
+            const contactCenterX = contactRect.left + contactRect.width / 2 + scrollLeft;
+            
+            // Positioning the graphic. 
+            // Since it's 'position: absolute' inside 'body' which is 'position: relative',
+            // we use document-relative coordinates.
+            
+            // Adjust these offsets based on where the arrow is in the free-estimate.png
+            // Assuming the arrow is at the top-middle of the graphic and points up.
+            freeEstimate.style.top = (contactRect.bottom + scrollTop) + 'px';
+            
+            // Center it horizontally under the contact icon, shifted slightly to the right
+            const estimateWidth = freeEstimate.offsetWidth;
+            let leftPos = (contactCenterX - estimateWidth / 2) + 20; // Added 20px offset to move it right
+            
+            // Ensure it doesn't go off-screen
+            const viewportWidth = window.innerWidth;
+            if (leftPos + estimateWidth > viewportWidth) {
+                leftPos = viewportWidth - estimateWidth - 10;
+            }
+            if (leftPos < 0) {
+                leftPos = 10;
+            }
+
+            freeEstimate.style.left = leftPos + 'px';
+            freeEstimate.style.right = 'auto'; // Override the CSS right: 0vw
+        }
+    }
+
+    window.addEventListener('load', positionFreeEstimate);
+    window.addEventListener('resize', positionFreeEstimate);
+    // Also trigger on scroll in case the banner is not fixed but we want to maintain relative position
+    window.addEventListener('scroll', positionFreeEstimate);
+</script>
 <div class="main">
     <img src="logo/name-tag.png" alt="Niles painting llc, serving greater Portland, the casco bay islands and more" class="name-tags">
 </div>
@@ -45,7 +89,7 @@
             <a href="#">Contact</a>
         </div>
         <br>
-        <p>© 2026 NILES PAINTING LLC. All rights reserved.</p>
+        <p>© 2026 NILES PAINTING LLC. ALL RIGHTS RESERVED.</p>
     </div>
     <div class="links">
         <div class="left">
